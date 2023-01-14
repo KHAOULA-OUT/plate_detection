@@ -1,0 +1,42 @@
+<div style="text-align: center;">
+  <h1>Plates Detection</h1>
+  
+
+  <div >
+    <input type="file" (change)="onSelectImage($event)">
+    <br>
+  </div>
+  <img [src]="path_angular" width="500px" style="cursor:pointer;"> <br>
+  
+  <div *ngIf="isReload; else elseTemplate">
+    <button (click)="reload()">Reload</button>
+  </div>
+  <ng-template #elseTemplate>
+    <div>
+      <button (click)="getPlat()">Detect Plate</button>
+    </div>
+  </ng-template>
+  
+  
+  
+  
+  
+</div>
+
+<div style="text-align: center;">
+  <h3>Plate Image After Detection:</h3>
+  <img [src]="path_contour" width="200px" style="cursor:pointer;" />
+</div>
+
+<div style="text-align: center;">
+  <h3>Caracter Detection:</h3>
+  <img [src]="path_countour_rect" width="200px" style="cursor:pointer;" />
+</div>
+
+
+
+
+<div style="text-align: center;">
+  <h3>Plate Number: <h1>{{nb_plate}}</h1></h3>
+</div>
+
