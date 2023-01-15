@@ -1,4 +1,35 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">Plate Detection</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Code on Github</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void(0)">Link</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
 <div style="text-align: center;">
+<div class="container p-3 my-5 border">
   <h1>Plates Detection</h1>
   
 
@@ -9,11 +40,11 @@
   <img [src]="path_angular" width="500px" style="cursor:pointer;"> <br>
   
   <div *ngIf="isReload; else elseTemplate">
-    <button (click)="reload()">Reload</button>
+    <button (click)="reload()" class="btn btn-primary">Reload</button>
   </div>
   <ng-template #elseTemplate>
     <div>
-      <button (click)="getPlat()">Detect Plate</button>
+      <button class="btn btn-primary" (click)="getPlat()">Detect Plate</button>
     </div>
   </ng-template>
   
@@ -21,22 +52,40 @@
   
   
   
-</div>
+</div></div>
 
 <div style="text-align: center;">
-  <h3>Plate Image After Detection:</h3>
-  <img [src]="path_contour" width="200px" style="cursor:pointer;" />
+  <div class="container p-3 my-5 border">
+    <div class="row">
+      <div class="col-sm-6 bg-primary text-white p-3">
+      <h3>Plate Image After Detection:</h3>
+      <img [src]="path_contour" width="200px" style="cursor:pointer;" />
+      </div>
+  
+
+
+      <div class="col-sm-6 bg-dark text-white p-3">
+    <h3>Caracter Detection:</h3>
+    <img [src]="path_countour_rect" width="200px" style="cursor:pointer;" /></div>
+  </div>
+  </div>
 </div>
 
-<div style="text-align: center;">
-  <h3>Caracter Detection:</h3>
-  <img [src]="path_countour_rect" width="200px" style="cursor:pointer;" />
-</div>
-
 
 
 
 <div style="text-align: center;">
+  <div class="container p-3 my-5 border">
   <h3>Plate Number: <h1>{{nb_plate}}</h1></h3>
+  </div>
 </div>
+
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-bottom">
+  <div class="container-fluid">
+    
+    <a class=" navbar-brand" href="#">Created By Khaoula & Zakaria</a></div>
+ 
+</nav>
 
